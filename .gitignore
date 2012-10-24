@@ -16,3 +16,6 @@
 
 # Ignore public uploads pics
 public/uploads
+
+#Ignore env variable keys for s3
+/s3.env
