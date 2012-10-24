@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  database: stuart_tunes_dev
+  username: stuwagsmac
+  password:
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: stuart_tunes_test
+  username: stuwagsmac
+  password:
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: stuart_tunes_production  
+  username:
+  password:
+  host: localhost
+
