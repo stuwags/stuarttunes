@@ -18,5 +18,6 @@ group :development, :test do
   gem 'foreman'
   gem 'pry-nav'
   gem 'pry-rails'
+  gem 'rails-erd'
 end
 
