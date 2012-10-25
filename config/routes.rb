@@ -1,4 +1,5 @@
 StuartTunes::Application.routes.draw do
+  resources :artists
   resources :posts
   resources :songs
   root :to => 'songs#index'
