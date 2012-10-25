@@ -21,3 +21,4 @@ public/uploads
 .env
 Procfile
 /config/initializers/aws.rb
+erd.pdf

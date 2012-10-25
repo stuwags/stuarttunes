@@ -11,7 +11,7 @@
 #
 
 class Song < ActiveRecord::Base
-  attr_accessible :name, :price, :audiofile
+  attr_accessible :name, :price, :audiofile, :artist_ids
   mount_uploader :audiofile, AudiofileUploader
-  # has_and_belongs_to_many :artists
+  has_and_belongs_to_many :artists
 end
