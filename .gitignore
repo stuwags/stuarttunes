@@ -20,3 +20,4 @@ public/uploads
 #Ignore env variable keys for s3
 .env
 Procfile
+/config/initializers/aws.rb
