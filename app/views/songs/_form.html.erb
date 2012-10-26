@@ -15,7 +15,14 @@
   <div class="field">
     <%= f.label :artist_ids %><br />
     <%= f.collection_select :artist_ids, @artists, :id, :name, {}, {multiple: true} %>
-
+  </div>
+  <div class="field">
+    <%= f.label :genres_ids %><br />
+    <%= f.collection_select :genre_ids, @genres, :id, :name, {}, {multiple: true} %>
+  </div>
+  <div class="field">
+    <%= f.label :album_ids %><br />
+    <%= f.collection_select :album_ids, @albums, :id, :name, {}, {multiple: true} %>
   </div>
   <div class="actions">
     <%= f.submit %>
