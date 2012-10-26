@@ -1,4 +1,6 @@
 class ArtistsController < ApplicationController
+  before_filter :authenticate_user!
+
   def new
     @artist = Artist.new
   end

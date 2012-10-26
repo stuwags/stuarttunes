@@ -1,4 +1,6 @@
 class GenresController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
     @genres = Genre.all
   end
