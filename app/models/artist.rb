@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  dob        :daterai
+#  dob        :date
 #  photo      :string(255)
 #  bio        :text
 #  created_at :datetime         not null
