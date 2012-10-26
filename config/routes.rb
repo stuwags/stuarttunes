@@ -3,6 +3,6 @@ StuartTunes::Application.routes.draw do
 
   resources :artists
   resources :songs
+  resources :genres
   root :to => 'songs#index'
-
 end
