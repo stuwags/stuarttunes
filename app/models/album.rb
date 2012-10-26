@@ -14,4 +14,3 @@ class Album < ActiveRecord::Base
   attr_accessible :name, :photo, :release_date
   mount_uploader :photo, AudiofileUploader
 end
-pho
