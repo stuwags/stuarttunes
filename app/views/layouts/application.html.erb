@@ -11,5 +11,7 @@
   <p class="alert"><%= alert %></p>
 <%= yield %>
 
+<p><%= link_to 'sign out', destroy_user_session_path, :method => :delete %></p>
+
 </body>
 </html>
