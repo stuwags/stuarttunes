@@ -1,0 +1,6 @@
+Buy <%= @song.name %> for $$<%= @song.price %> Now!!!!!!!!
+
+<%= form_for(@purchase) do |f| %>
+  <div class="actions">
+    <%= f.submit %>
+<% end %>
