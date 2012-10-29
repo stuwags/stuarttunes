@@ -10,9 +10,13 @@
   <tr>
     <td><%= song.name %></td>
     <td><%= song.price %></td>
+    <td>
+      <audio controls ="controls">
+      <source src="<%= song.audiofile %>" type="audio/mpeg">
+    </td>
     <td><%= link_to 'Edit', edit_song_path(song) %></td>
     <td><%= link_to 'Delete', song, method: :delete, data:{ confirm: 'Are you sure?'} %></td>
-
+    <td><%= link_to 'Buy' %></td>
   </tr>
 <% end %>
 </table>
