@@ -10,21 +10,33 @@
   <tr>
     <td><%= song.name %></td>
     <td>$<%= song.price %></td>
-    <td>
-      <audio controls ="controls">
-      <source src="<%= song.audiofile %>" type="audio/mpeg">
-    </td>
-    <td><%= link_to 'Edit', edit_song_path(song) %></td>
-    <td><%= link_to 'Delete', song, method: :delete, data:{ confirm: 'Are you sure?'} %></td>
-    <td><%= form_tag '/newpurchase' do %>
-      <%= hidden_field_tag 'song_id', song.id %>
-      <%= submit_tag 'Buy it now!' %>
+    <% if current_user.purchases.find_by_song_id(song.id) != nil || current_user.admin? %>
+      <td>
+        <audio controls ="controls">
+        <source src="<%= song.audiofile %>" type="audio/mpeg">
+      </td>
+    <% end %>
+
+    <% if current_user.admin? %>
+      <td><%= link_to 'Edit', edit_song_path(song) %></td>
+      <td><%= link_to 'Delete', song, method: :delete, data:{ confirm: 'Are you sure?'} %></td>
+    <% end %>
+
+    <% if current_user.purchases.find_by_song_id(song.id) == nil && !current_user.admin? %>
+      <td><%= form_tag '/newpurchase' do %>
+        <%= hidden_field_tag 'song_id', song.id %>
+        <%= submit_tag 'Buy it now!' %>
       <% end %>
+    <% end %>
     </td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Song', new_song_path %>
+<% if current_user.admin? %>
+  <%= link_to 'New Song', new_song_path %>
+  <%= link_to 'New Artist', new_artist_path %>
+  <%= link_to 'New Genre', new_genre_path %>
+  <%= link_to 'New Album', new_album_path %>
+<% end %>
