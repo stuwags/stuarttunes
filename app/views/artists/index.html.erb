@@ -1,3 +1,16 @@
-<h1>Artists#index</h1>
-<p>Find me in app/views/artists/index.html.erb</p>
-<%= @artists %>
+<h1>All your cool artists</h1>
+
+
+
+<% @artists.each do |artist| %>
+
+
+
+  <h2><%= artist.name %></h2>
+  <h3>Born <%= artist.dob.strftime("%b #{artist.dob.day.ordinalize} %y") %></h3>
+  <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+  <td><%= link_to 'Delete', artist, method: :delete, data:{ confirm: 'Are you sure?'} %></td><br>
+  <img src="<%= artist.photo %>"></img>
+
+  <p> <%= artist.bio %> </p>
+<% end %>
