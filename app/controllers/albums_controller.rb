@@ -1,13 +1,5 @@
 class AlbumsController < ApplicationController
-  # before_filter :authenticate_user!
-
-  if current_user.admin?
-    # do something
-  end
-
-  if current_user.try(:admin?)
-    # do something
-  end
+  before_filter :authenticate_user!
 
   def index
     @albums = Album.all
