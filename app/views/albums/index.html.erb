@@ -5,7 +5,9 @@
 <% @albums.each do |album| %>
   <h2><%= album.name %></h2>
   <h3>Release Date: <%= album.release_date.strftime("%b #{album.release_date.day.ordinalize} %y") %></h3>
-  <td><%= link_to 'Edit', edit_album_path(album) %></td>
-  <td><%= link_to 'Delete', album, method: :delete, data:{ confirm: 'Are you sure?'} %></td><br>
+  <% if current_user.admin? %>
+    <td><%= link_to 'Edit', edit_album_path(album) %></td>
+    <td><%= link_to 'Delete', album, method: :delete, data:{ confirm: 'Are you sure?'} %></td><br>
+  <% end %>
   <img src="<%= album.photo %>"></img>
 <% end %>
