@@ -6,6 +6,11 @@ gem 'devise'
 gem 'carrierwave'
 gem 'jquery-rails'
 gem 'pg'
+gem 'twitter-bootstrap-rails'
+gem 'less-rails'
+gem 'therubyracer'
+
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

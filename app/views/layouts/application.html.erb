@@ -7,11 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
-
+<div class="container">
+  <div class="navbar">
+  <div class="navbar-inner">
+    <span class="brand"><%= link_to "StuartTunes", songs_path %></span>
+    <ul class="nav">
+      <li class="active"><%= link_to "Albums", albums_path %></li>
+      <li></li>
+      <li><%= link_to "Artists", artists_path %></li>
+      <li><%= link_to "Genres", genres_path %></li>
+    </ul>
+  </div>
+</div>
+  <div class="row">
+    <div class="span12"><%= yield %></div>
+    </div>
+  </div>
 <p><%= link_to 'sign out', destroy_user_session_path, :method => :delete %></p>
+</div>
+
+
 
 <%= debug(params) if Rails.env.development? %>
 
