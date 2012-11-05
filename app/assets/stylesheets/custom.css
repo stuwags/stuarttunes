@@ -3,8 +3,11 @@ li {
   float: left;
 }
 
-li a {
-  padding: 1em;
+.nav {
+  padding: 0em 6em;
   color: grey;
-  background-color: #F0F0F0;
+}
+
+#out {
+  color: orange;
 }
