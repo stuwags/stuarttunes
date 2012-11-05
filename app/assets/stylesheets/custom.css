@@ -1,0 +1,10 @@
+li {
+  display: block;
+  float: left;
+}
+
+li a {
+  padding: 1em;
+  color: grey;
+  background-color: #F0F0F0;
+}
