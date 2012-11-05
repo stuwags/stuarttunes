@@ -1,5 +1,6 @@
 class GenresController < ApplicationController
-  before_filter :authenticate_admin
+  before_filter :authenticate_admin, only: [:new, :edit, :create, :update]
+
 
   def index
     @genres = Genre.all

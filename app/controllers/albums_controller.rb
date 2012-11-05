@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_admin, only: [:new, :edit, :create, :update]
 
   def index
     @albums = Album.all

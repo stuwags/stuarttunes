@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
-  before_filter :authenticate_admin
+  before_filter :authenticate_admin, only: [:new, :edit, :create, :update]
+
 
   def new
     @artist = Artist.new
