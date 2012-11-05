@@ -1,22 +1,20 @@
-<%= form_for(@artist) do |f| %>
+<%= form_for(@artist, :html => { :class => "form-horizontal"}) do |f| %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :name, :class => "control-label" %>
+    <div class="controls"><%= f.text_field :name %></div>
   </div>
-  <div class="field">
-    <%= f.label :dob %><br />
-    <%= f.date_select :dob, :start_year => 1500, :end_year => Time.now.year %>
+  <div class="control-group">
+    <%= f.label :dob, :class => "control-label" %>
+    <div class="controls"><%= f.date_select :dob, {:start_year => 1500, :end_year => Time.now.year, :use_short_month => true}, { :class => "span2" }%></div>
   </div>
-  <div class="field">
-    <%= f.label :photo %><br />
-    <%= f.file_field :photo %>
+  <div class="control-group">
+    <%= f.label :photo, :class => "control-label" %>
+    <div class="controls"><%= f.file_field :photo %></div>
   </div>
-    <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio %>
+    <div class="control-group">
+    <%= f.label :bio, :class => "control-label" %>
+    <div class="controls"><%= f.text_area :bio %></div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="controls"><%= f.submit %></div>
 <% end %>
