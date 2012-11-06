@@ -8,5 +8,5 @@ StuartTunes::Application.routes.draw do
   resources :genres
   resources :purchases
   match '/newpurchase' => 'purchases#new', :via => :post
-  root :to => 'songs#index'
+  root :to => 'home#index'
 end
