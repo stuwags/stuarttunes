@@ -21,17 +21,17 @@
   <div class="row">
     <div class="span12"><%= yield %></div>
   </div>
-  <footer class="navbar"><div class="navbar-inner">
-    <ul class="nav">
+  <footer>
+    <ul id="footer-line">
       <% if current_user.try(:admin) %>
       <li><%= link_to 'New Song', new_song_path %></li>
       <li><%= link_to 'New Artist', new_artist_path %></li>
       <li><%= link_to 'New Genre', new_genre_path %></li>
       <li><%= link_to 'New Album', new_album_path %></li>
       <% end %>
-      <li id="out"><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+      <li ><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :id => "out" %></li>
     <ul>
-  </footer></div>
+  </footer>
 </div>
 
 

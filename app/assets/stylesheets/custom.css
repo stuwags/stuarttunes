@@ -13,7 +13,7 @@ h1.artists {
 }
 
 #out {
-  color: orange;
+  color: red;
 }
 
 .hero-unit {
@@ -32,4 +32,25 @@ h1.artists {
 
 .artist_info {
 
+}
+
+footer {
+width: 670px;
+overflow: hidden;
+margin: 0 auto;
+}
+  footer:after {
+    clear: both;
+  }
+
+#footer-line{
+  width: 670px;
+  overflow: hidden;
+}
+  #footer-line:after { clear: both; }
+
+footer ul li {
+  padding: 0.5em 2em;
+  text-align: center;
+  border-top: 2px solid #6B6B6B;
 }
