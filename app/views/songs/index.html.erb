@@ -1,16 +1,22 @@
 <h1>Buy and Listen to Songs</h1>
-
-<table>
+<div class="row">
+  <div class="span6">
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Price</th>
+    <th>Play It</th>
+    <% if current_user.admin? %>
+      <th>Edit</th>
+      <th>Delete</th>
+    <% end %>
   </tr>
 
 <% @songs.each do |song| %>
-  <tr>
+  <tr<% if current_user.purchases.find_by_song_id(song.id) || current_user.admin? %> class="success"<% end %>>
     <td><%= song.name %></td>
     <td>$<%= song.price %></td>
-    <% if current_user.purchases.find_by_song_id(song.id) != nil || current_user.admin? %>
+    <% if current_user.purchases.find_by_song_id(song.id) || current_user.admin? %>
       <td>
         <audio controls ="controls">
         <source src="<%= song.audiofile %>" type="audio/mpeg">
@@ -18,8 +24,8 @@
     <% end %>
 
     <% if current_user.admin? %>
-      <td><%= link_to 'Edit', edit_song_path(song) %></td>
-      <td><%= link_to 'Delete', song, method: :delete, data:{ confirm: 'Are you sure?'} %></td>
+      <td><%= link_to raw("<i class='icon-wrench'></i>"), edit_song_path(song) %></td>
+      <td><%= link_to raw("<i class='icon-trash'></i>"), song, method: :delete, data:{ confirm: 'Are you sure?'} %></td>
     <% end %>
 
     <% if current_user.purchases.find_by_song_id(song.id) == nil && !current_user.admin? %>
@@ -32,6 +38,8 @@
   </tr>
 <% end %>
 </table>
+</div>
+</div>
 
 <br />
 
