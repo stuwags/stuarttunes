@@ -1,11 +1,11 @@
 
-<h1 class="artists well green-box" >All your cool artists</h1>
+<h1 class="artists well title-box" >All your cool artists</h1>
 
 
 <div class="row">
 <% @artists.each do |artist| %>
-  <div class="hero-unit span6 blue-box">
-    <div class="purple-box"><h2><%= artist.name %></h2>
+  <div class="hero-unit span6 artist-box">
+    <div class="artist-name"><h2><%= artist.name %></h2>
     <h3>Born: <%= artist.dob.strftime("%b. #{artist.dob.day.ordinalize} %Y") %></h3></div>
     <% if current_user.admin? %>
       <br>
@@ -13,7 +13,6 @@
       <td><%= link_to 'Delete', artist, method: :delete, data:{ confirm: 'Are you sure?'} %></td><br>
     <% end %>
     <img src="<%= artist.photo %>"></img>
-    <p> <%= artist.bio %> </p>
   </div>
 <% end %>
 </div>
