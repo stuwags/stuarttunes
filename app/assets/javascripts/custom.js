@@ -3,5 +3,5 @@ var effect = ["wave", "zipper", "curtain"];
 
 $(document).ready( function(){
   $('#slideshowHolder').jqFancyTransitions({ width: 800, height: 900, effect: effect[Math.floor(Math.random()*3)]
-    , stripDelay: 10, navigation: true, strips: 50 });
+    , stripDelay: .1, navigation: true, strips: 20 });
 });
